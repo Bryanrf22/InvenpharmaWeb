@@ -1,0 +1,187 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+</div>
+<ol class="breadcrumb mb-4 mt-2">
+    <li class="breadcrumb-item"><a href="/">Resumen</a></li>
+    <li class="breadcrumb-item active">Dashboard</li>
+</ol>
+
+
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-sm-9">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Cantidad Clientes
+                        </div>
+                        <div id="totalCliente" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="fas fa-user fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-sm-9">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Cantidad Ventas
+                        </div>
+                        <div id="totalVentas" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="fas fa-shopping-bag fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-sm-9">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            Cantidad Productos
+                        </div>
+                        <div id="totalProductos" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="fas fa-boxes fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-sm-9">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            Cantidad Proveedores
+                        </div>
+                        <div id="totalProveedores" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="fas fa-users fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-tags me-1"></i>
+        <i class="m-0 font-weight-bold text-primary">Historial de Ventas</i>
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="row align-items-end">
+                <div class="col-sm-2">
+                    <div class="mb-2">
+                        <label class="form-label">Fecha de Inicio:</label>
+                        <input class="form-control" type="text" id="txtfechainicio" name="fechainicio" />
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="mb-2">
+                        <label class="form-label">Fecha Final:</label>
+                        <input class="form-control" type="text" id="txtfechafinal" name="fechafinal" />
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="mb-2">
+                        <label class="form-label">ID Transacción:</label>
+                        <input class="form-control" type="text" id="txtidtransaccion" name="idtransaccion" />
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="d-grid mb-2">
+                        <button class="btn btn-outline-primary" id="btnBuscar" type="button"><i
+                                class="fas fa-search"></i> Buscar</button>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="d-grid mb-2">
+                        <button class="btn btn-outline-success" type="submit"><i class="fas fa-file-excel"></i>
+                            Exportar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="tabla" class="display cell-border" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Fecha Venta</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th>ID Transacción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    
+
+    <script>
+        $(document).ready(function () {
+            console.log("Dashboard script iniciado");
+
+            var url = '@Url.Action("ObtenerReporte", "Home")';
+            console.log("Llamando a:", url);
+
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    console.log("Respuesta del servidor:", data);
+
+                    if (data.resultado) {
+                        $("#totalCliente").text(data.resultado.totalCliente);
+                        $("#totalVentas").text(data.resultado.totalVenta);
+                        $("#totalProductos").text(data.resultado.totalProducto);
+                        $("#totalProveedores").text(data.resultado.totalProveedor);
+                    } else {
+                        console.warn("No se recibieron datos válidos.");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error al obtener datos:", status, error);
+                }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+}

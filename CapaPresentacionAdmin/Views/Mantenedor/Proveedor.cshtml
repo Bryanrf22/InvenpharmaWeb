@@ -1,0 +1,274 @@
+﻿
+@{
+    ViewData["Title"] = "Proveedor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Proveedor</h1>
+<ol class="breadcrumb mb-4 mt-2">
+    <li class="breadcrumb-item"><a href="/">Administrar</a></li>
+    <li class="breadcrumb-item active">Proveedores</li>
+</ol>
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-users me-1"></i> Lista de Proveedores
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-outline-primary" onclick="abrirModal(null)">Agregar Nuevo</button>
+            </div>
+            <hr />
+            <table id="tabla" class="display cell-border" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Direccion</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+     data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark-subtle text-black-50">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo Nuevo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <input id="txtID" type="hidden" value="0"></input>
+                <div class="row g-2">
+                    <div class="col-sm-6">
+                        <label for="txtNombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="txtNombre" autocomplete="off">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="txtCorreo" class="form-label">Correo</label>
+                        <input type="text" class="form-control" id="txtCorreo" autocomplete="off">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="txtTelefono" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" id="txtTelefono" autocomplete="off">
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="txtDireccion" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="txtDireccion" autocomplete="off">
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div id="mensajeError" class="alert alert-danger" role="alert" style="display: none;">
+                                A simple danger alert—check it out!
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-outline-primary" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+
+
+    <script>
+        var tabladata;
+        var filaSeleccion;
+
+        tabladata = $("#tabla").DataTable({
+            ordering: false,
+            ajax: {
+                url: '@Url.Action("ListarProveedores", "Mantenedor")',
+                type: "GET",
+                dataSrc: function (resp) {
+                    console.log("Respuesta ListarProveedores:", resp);
+                    if (resp.data && Array.isArray(resp.data)) {
+                        return resp.data;
+                    }
+                    // fallback
+                    return [];
+                }
+            },
+            columns: [
+              { data: "proveedorID" },
+              { data: "nombre" },
+              { data: "correo" },
+              { data: "telefono" },
+              { data: "direccion" },
+              {
+                  "defaultContent": '<button type="button" class="btn btn-outline-info btn-sm btn-editar"><i class="fas fa-pen"></i></button>' +
+                        '<button type="button" class="btn btn-outline-danger btn-sm ms-2 btn-eliminar"><i class="fas fa-trash"></i></button>',
+                    "orderable": false,
+                    "searchable": false,
+                    "width": "80px"
+              }
+            ],
+            language: {
+                url: '//cdn.datatables.net/plug-ins/2.3.4/i18n/es-ES.json'
+            },
+            responsive: true
+        });
+
+        function abrirModal(json) {
+
+            $("#txtID").val("0");
+            $("#txtNombre").val("");
+            $("#txtCorreo").val("");
+            $("#txtTelefono").val("");
+            $("#txtDireccion").val("");
+            $("#mensajeError").hide();
+
+
+            if (json != null) {
+                $("#exampleModalLabel").text("Editar Proveedor");
+                $("#txtID").val(json.proveedorID);
+                $("#txtNombre").val(json.nombre);
+                $("#txtCorreo").val(json.correo);
+                $("#txtTelefono").val(json.telefono);
+                $("#txtDireccion").val(json.direccion);
+                $("#mensajeError").hide();
+            } else {
+                $("#exampleModalLabel").text("Agregar Proveedor Nuevo");
+                $("#txtID").val("0");
+                $("#txtNombre").val("");
+                $("#txtCorreo").val("");
+                $("#txtTelefono").val("");
+            }
+            var modal = new bootstrap.Modal(document.getElementById('FormModal'));
+            modal.show();
+        }
+
+
+
+        $("#tabla tbody").on("click", '.btn-editar', function () {
+            filaSeleccion = $(this).closest('tr');
+
+            var datos = tabladata.row(filaSeleccion).data();
+
+            abrirModal(datos);
+        })
+
+
+        $("#tabla tbody").on("click", ".btn-eliminar", function () {
+            var fila = $(this).closest("tr");
+            var datos = tabladata.row(fila).data();
+
+            Swal.fire({
+                title: "¿Estás seguro?",
+                text: "Eliminarás el Proveedor: " + datos.nombre,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#e74a3b",
+                confirmButtonText: "Sí, eliminar",
+                cancelButtonText: "Cancelar",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("EliminarProveedor", "Mantenedor")',
+                        type: 'POST',
+                        data: JSON.stringify({ id: datos.proveedorID }),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            console.log("Respuesta eliminar:", response);
+                            if (response.resultado) {
+                                tabladata.row(fila).remove().draw(false);
+                                Swal.fire("Eliminado", "El proveedor ha sido eliminado.", "success");
+                            } else {
+                                Swal.fire("Error", response.mensaje, "error");
+                            }
+                        },
+                        error: function (xhr, status, err) {
+                            console.error("Error AJAX al eliminar:", err, xhr.responseText);
+                            Swal.fire("Error", "Ocurrió un error al eliminar", "error");
+                        }
+                    });
+                }
+            });
+        });
+
+
+        function Guardar() {
+            var Proveedor = {
+                proveedorID: Number($("#txtID").val()),
+                nombre: $("#txtNombre").val(),
+                correo: $("#txtCorreo").val(),
+                telefono: $("#txtTelefono").val(),
+                direccion: $("#txtDireccion").val()
+            };
+
+            $.ajax({
+                url: '@Url.Action("GuardarProveedor", "Mantenedor")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(Proveedor),
+                beforeSend: function () {
+                    $("#FormModal .modal-content").LoadingOverlay("show", {
+                        text: "Procesando...",
+                        textResizeFactor: 0.14
+                    });
+                },
+                success: function (data) {
+                    console.log("Success:", data);
+
+                    $("#FormModal .modal-content").LoadingOverlay("hide");
+
+                    if (data.resultado) {
+                        // actualizar tabla o agregar fila, etc.
+                        tabladata.row(filaSeleccion).data(Proveedor).draw(false);
+
+                        // Aquí cierra el modal:
+                        const modalEl = document.getElementById('FormModal');
+                        const modalInst = bootstrap.Modal.getOrCreateInstance(modalEl);
+                        modalInst.hide();
+                    }
+                    else {
+                        // mostrar mensaje de error
+                        $("#mensajeError").text(data.mensaje).show();
+                    }
+                },
+                error: function (xhr, status, err) {
+                    $("#FormModal .modal-content").LoadingOverlay("hide");
+                    console.error("Error AJAX:", xhr.responseText, status, err);
+                    $("#mensajeError").text("Error Ajax").show();
+                }
+            });
+        }
+
+
+
+    </script>
+
+
+}
+
+
+
+
