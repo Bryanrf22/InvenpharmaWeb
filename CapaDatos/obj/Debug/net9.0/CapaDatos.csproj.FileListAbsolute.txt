@@ -18,3 +18,4 @@ C:\Users\LOQ\source\repos\Integrador\CapaDatos\obj\Debug\net9.0\CapaDatos.dll
 C:\Users\LOQ\source\repos\Integrador\CapaDatos\obj\Debug\net9.0\refint\CapaDatos.dll
 C:\Users\LOQ\source\repos\Integrador\CapaDatos\obj\Debug\net9.0\CapaDatos.pdb
 C:\Users\LOQ\source\repos\Integrador\CapaDatos\obj\Debug\net9.0\ref\CapaDatos.dll
+C:\Users\LOQ\source\repos\Integrador\CapaDatos\obj\Debug\net9.0\CapaDatos.sourcelink.json

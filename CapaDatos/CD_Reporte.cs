@@ -17,20 +17,38 @@ namespace CapaDatos
             {
                 SqlCommand cmd = new SqlCommand("ReporteDashboard", conexion.AbrirConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                if (dr.Read())
+                using (SqlDataReader dr = cmd.ExecuteReader())
                 {
-                    dashBoard.TotalCliente = Convert.ToInt32(dr["TotalCliente"]);
-                    dashBoard.TotalVenta = Convert.ToInt32(dr["TotalVenta"]);
-                    dashBoard.TotalProducto = Convert.ToInt32(dr["TotalProducto"]);
-                    dashBoard.TotalProveedor = Convert.ToInt32(dr["TotalProveedor"]);
-                }
+                    // Helper to try multiple possible column names safely
+                    int ReadAny(SqlDataReader reader, params string[] names)
+                    {
+                        foreach (var n in names)
+                        {
+                            try
+                            {
+                                int ord = reader.GetOrdinal(n);
+                                if (!reader.IsDBNull(ord)) return Convert.ToInt32(reader.GetValue(ord));
+                                return 0;
+                            }
+                            catch { /* column not present - try next */ }
+                        }
+                        return 0;
+                    }
 
-                dr.Close();
+                    if (dr.Read())
+                    {
+                        dashBoard.TotalCliente = ReadAny(dr, "TotalCliente");
+                        dashBoard.TotalVenta = ReadAny(dr, "TotalVenta");
+                        // Stored proc previously returned TotalProductos (plural) in some versions
+                        dashBoard.TotalProducto = ReadAny(dr, "TotalProducto", "TotalProductos");
+                        dashBoard.TotalProveedor = ReadAny(dr, "TotalProveedor");
+                    }
+                }
             }
             catch (Exception ex)
             {
+                // If anything fails, return a default object but log the exception for diagnosis
+                Console.WriteLine("Error en ReporteDashboard: " + ex.Message);
                 dashBoard = new DashBoard(); // valores por defecto
             }
             finally

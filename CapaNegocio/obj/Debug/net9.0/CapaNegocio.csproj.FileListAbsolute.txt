@@ -20,3 +20,4 @@ C:\Users\LOQ\source\repos\Integrador\CapaNegocio\obj\Debug\net9.0\CapaNegocio.dl
 C:\Users\LOQ\source\repos\Integrador\CapaNegocio\obj\Debug\net9.0\refint\CapaNegocio.dll
 C:\Users\LOQ\source\repos\Integrador\CapaNegocio\obj\Debug\net9.0\CapaNegocio.pdb
 C:\Users\LOQ\source\repos\Integrador\CapaNegocio\obj\Debug\net9.0\ref\CapaNegocio.dll
+C:\Users\LOQ\source\repos\Integrador\CapaNegocio\obj\Debug\net9.0\CapaNegocio.sourcelink.json

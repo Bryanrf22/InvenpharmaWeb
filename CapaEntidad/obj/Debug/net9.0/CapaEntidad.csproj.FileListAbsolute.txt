@@ -20,3 +20,4 @@ C:\Users\LOQ\source\repos\Integrador\CapaEntidad\obj\Debug\net9.0\CapaEntidad.dl
 C:\Users\LOQ\source\repos\Integrador\CapaEntidad\obj\Debug\net9.0\refint\CapaEntidad.dll
 C:\Users\LOQ\source\repos\Integrador\CapaEntidad\obj\Debug\net9.0\CapaEntidad.pdb
 C:\Users\LOQ\source\repos\Integrador\CapaEntidad\obj\Debug\net9.0\ref\CapaEntidad.dll
+C:\Users\LOQ\source\repos\Integrador\CapaEntidad\obj\Debug\net9.0\CapaEntidad.sourcelink.json
