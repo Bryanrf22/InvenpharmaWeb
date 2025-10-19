@@ -19,7 +19,7 @@
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Cantidad Clientes
                         </div>
-                        <div id="totalCliente" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                        <div id="totalCliente" class="h5 mb-0 font-weight-bold text-gray-800"></div>
                     </div>
                     <div class="col-sm-3">
                         <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -155,33 +155,24 @@
     
 
     <script>
-        $(document).ready(function () {
-            console.log("Dashboard script iniciado");
 
-            var url = '@Url.Action("ObtenerReporte", "Home")';
-            console.log("Llamando a:", url);
+        jQuery.ajax({
+            url: '@Url.Action("ObtenerReporte", "Home")',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function (data)
+            {
+                var objeto = data.resultado;
 
-            $.ajax({
-                url: url,
-                type: "GET",
-                dataType: "json",
-                success: function (data) {
-                    console.log("Respuesta del servidor:", data);
+                $("#totalCliente").text(objeto.TotalCliente);
+                $("#totalVentas").text(objeto.TotalVenta);
+                $("#totalProductos").text(objeto.TotalProducto);
+                $("#totalProveedores").text(objeto.TotalProveedor);
+            }
+        })
 
-                    if (data.resultado) {
-                        $("#totalCliente").text(data.resultado.totalCliente);
-                        $("#totalVentas").text(data.resultado.totalVenta);
-                        $("#totalProductos").text(data.resultado.totalProducto);
-                        $("#totalProveedores").text(data.resultado.totalProveedor);
-                    } else {
-                        console.warn("No se recibieron datos válidos.");
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error al obtener datos:", status, error);
-                }
-            });
-        });
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 }

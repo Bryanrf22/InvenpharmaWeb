@@ -549,3 +549,5 @@ C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\refi
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\CapaPresentacionAdmin.pdb
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\CapaPresentacionAdmin.genruntimeconfig.cache
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\ref\CapaPresentacionAdmin.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\CapaPresentacionAdmin.sourcelink.json
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
