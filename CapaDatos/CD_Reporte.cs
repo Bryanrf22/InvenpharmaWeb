@@ -8,6 +8,45 @@ namespace CapaDatos
     {
         public DashBoard dashBoards = new DashBoard();
 
+        public List<HistorialVentas> HistorialVentas(string fechaInicio, string fechaFin, string idTransaccion)
+        {
+            List<HistorialVentas> lista = new List<HistorialVentas>();
+            Conexion conexion = new Conexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("HistorialVentas", conexion.AbrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                cmd.Parameters.AddWithValue("@fechaFin", fechaFin);
+                cmd.Parameters.AddWithValue("@idTransaccion", idTransaccion);
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new HistorialVentas()
+                        {
+                            FechaVenta = dr["FechaVenta"].ToString(),
+                            Usuario = dr["Usuario"].ToString(),
+                            Producto = dr["Producto"].ToString(),
+                            Precio = Convert.ToDecimal(dr["Precio"]),
+                            Cantidad = Convert.ToInt32(dr["Cantidad"]),
+                            Total = Convert.ToDecimal(dr["Total"]),
+                            TransaccionID = dr["TransaccionID"].ToString(),
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lista = new List<HistorialVentas>();
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+            return lista;
+        }
+
         public DashBoard Reporte()
         {
             DashBoard dashBoard = new DashBoard();

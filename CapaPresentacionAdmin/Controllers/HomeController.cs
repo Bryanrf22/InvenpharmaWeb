@@ -78,11 +78,23 @@ namespace CapaPresentacionAdmin.Controllers
 
         #endregion CRUD Usuarios
 
+        #region Reportes
+
         [HttpGet]
         public JsonResult ObtenerReporte()
         {
             DashBoard objeto = new CN_Reporte().Reporte();
             return Json(new { resultado = objeto });
         }
+
+        [HttpPost]
+        public JsonResult HistorialVentas([FromBody] string fechaInicio, string fechaFin, string idTransaccion)
+        {
+            List<HistorialVentas> oLista = new List<HistorialVentas>();
+            oLista = new CN_Reporte().HistorialVentas(request.FechaInicio, request.FechaFin, request.IdTransaccion);
+            return Json(new { data = oLista });
+        }
+
+        #endregion Reportes
     }
 }
