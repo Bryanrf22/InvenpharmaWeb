@@ -88,7 +88,7 @@ namespace CapaPresentacionAdmin.Controllers
         }
 
         [HttpPost]
-        public JsonResult HistorialVentas([FromBody] string fechaInicio, string fechaFin, string idTransaccion)
+        public JsonResult HistorialVentas(string fechaInicio, string fechaFin, string idTransaccion)
         {
             List<HistorialVentas> oLista = new List<HistorialVentas>();
             oLista = new CN_Reporte().HistorialVentas(fechaInicio, fechaFin, idTransaccion);

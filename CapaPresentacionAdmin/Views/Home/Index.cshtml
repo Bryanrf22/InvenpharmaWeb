@@ -30,11 +30,11 @@
     </div>
 
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col-sm-9">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Cantidad Ventas
                         </div>
                         <div id="totalVentas" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
@@ -154,8 +154,13 @@
 @section Scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    <!-- DataTables CSS/JS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -204,36 +209,48 @@
             });
 
 
-            var Url ='@Url.Action("HistorialVentas", "Home")' +
-            "?fechaInicio=" + $('#txtfechainicio').val() +
-            "&fechaFin=" + $('#txtfechafinal').val() +
-            "&idTransaccion=" + $('#txtidtransaccion').val();
-
             var tabladata;
 
             tabladata = $("#tabla").DataTable({
-            responsive: true,
-            ordering: false,
-            ajax: {
-                url: Url,
-                type: "POST",
-                dataSrc: "data"
-            },
-            columns: [
-                { data: "fechaVenta" },
-                { data: "cliente" },
-                { data: "producto" },
-                { data: "precio" },
-                { data: "cantidad" },
-                { data: "total" },
-                { data: "idTransaccion" }
-            ],
-            language:
-            {
-                url: '//cdn.datatables.net/plug-ins/2.3.4/i18n/es-ES.json',
-            },
-            
-        });
+                responsive: true,
+                ordering: false,
+                processing: true,
+                serverSide: false,
+                ajax: {
+                    url: '@Url.Action("HistorialVentas", "Home")',
+                    type: 'POST',
+                    data: function (d) {
+                        // send form values as parameters
+                        return {
+                            fechaInicio: $('#txtfechainicio').val(),
+                            fechaFin: $('#txtfechafinal').val(),
+                            idTransaccion: $('#txtidtransaccion').val()
+                        };
+                    },
+                    dataSrc: 'data'
+                },
+                columns: [
+                    { data: 'FechaVenta' },
+                    { data: 'Usuario' },
+                    { data: 'Producto' },
+                    { data: 'Precio' },
+                    { data: 'Cantidad' },
+                    { data: 'Total' },
+                    { data: 'TransaccionID' }
+                ],
+                language: { url: '//cdn.datatables.net/plug-ins/2.3.4/i18n/es-ES.json' }
+            });
+
+            // Log the AJAX response from the server so we can debug when table is empty
+            $('#tabla').on('xhr.dt', function (e, settings, json, xhr) {
+                console.log('DataTable xhr.dt json:', json);
+                if (xhr) console.log('DataTable xhr status:', xhr.status, xhr.statusText);
+            });
+
+            // Buscar button reloads the table using current date inputs
+            $('#btnBuscar').on('click', function () {
+                tabladata.ajax.reload();
+            });
 
         }); 
     </script>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj": {}
+    "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj": {
+    "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj",
+        "projectUniqueName": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj",
         "projectName": "CapaDatos",
-        "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj",
+        "projectPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj",
         "packagesPath": "C:\\Users\\LOQ\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\obj\\",
+        "outputPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj": {
-                "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj"
+              "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj": {
+                "projectPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj": {
+    "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj",
+        "projectUniqueName": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj",
         "projectName": "CapaEntidad",
-        "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj",
+        "projectPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj",
         "packagesPath": "C:\\Users\\LOQ\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\obj\\",
+        "outputPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
