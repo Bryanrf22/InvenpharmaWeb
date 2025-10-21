@@ -153,43 +153,91 @@
 
 @section Scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 
     <script>
-        jQuery.ajax({
-            url: '@Url.Action("ObtenerReporte", "Home")',
-            type: 'GET',
-            dataType: 'json'
-        }).done(function (data) {
-            console.log('ObtenerReporte raw response:', data);
-            var objeto = data && data.resultado ? data.resultado : null;
-            if (!objeto) {
-                console.warn('ObtenerReporte: resultado nulo o no presente');
+        $(document).ready(function () {
+
+            $('#txtfechainicio').datepicker({
+                dateFormat: 'dd-mm-yy'
+            }).datepicker("setDate", new Date());
+            $('#txtfechafinal').datepicker({
+                dateFormat: 'dd-mm-yy'
+            }).datepicker("setDate", new Date());
+
+
+
+            jQuery.ajax({
+                url: '@Url.Action("ObtenerReporte", "Home")',
+                type: 'GET',
+                dataType: 'json'
+            }).done(function (data) {
+                var objeto = data && data.resultado ? data.resultado : null;
+                if (!objeto) {
+                    $("#totalCliente,#totalVentas,#totalProductos,#totalProveedores").text('0');
+                    return;
+                }
+
+                function getProp(obj, propPascal) {
+                    if (!obj) return 0;
+                    if (propPascal in obj) return obj[propPascal];
+                    var camel = propPascal.charAt(0).toLowerCase() + propPascal.slice(1);
+                    if (camel in obj) return obj[camel];
+                    return 0;
+                }
+
+                var totalClientes = getProp(objeto, 'TotalCliente') || 0;
+                var totalVentas = getProp(objeto, 'TotalVenta') || 0;
+                var totalProductos = getProp(objeto, 'TotalProducto') || getProp(objeto, 'TotalProductos') || 0;
+                var totalProveedores = getProp(objeto, 'TotalProveedor') || 0;
+
+
+                $("#totalCliente").text(totalClientes);
+                $("#totalVentas").text(totalVentas);
+                $("#totalProductos").text(totalProductos);
+                $("#totalProveedores").text(totalProveedores);
+            }).fail(function (xhr, status, err) {
+                console.error('Error ObtenerReporte:', status, err);
                 $("#totalCliente,#totalVentas,#totalProductos,#totalProveedores").text('0');
-                return;
-            }
-
-            // helper that accepts both PascalCase and camelCase property names
-            function getProp(obj, propPascal) {
-                if (!obj) return 0;
-                if (propPascal in obj) return obj[propPascal];
-                var camel = propPascal.charAt(0).toLowerCase() + propPascal.slice(1);
-                if (camel in obj) return obj[camel];
-                return 0;
-            }
-
-            var totalClientes = getProp(objeto, 'TotalCliente') || 0;
-            var totalVentas = getProp(objeto, 'TotalVenta') || 0;
-            var totalProductos = getProp(objeto, 'TotalProducto') || getProp(objeto, 'TotalProductos') || 0;
-            var totalProveedores = getProp(objeto, 'TotalProveedor') || 0;
+            });
 
 
-            $("#totalCliente").text(totalClientes);
-            $("#totalVentas").text(totalVentas);
-            $("#totalProductos").text(totalProductos);
-            $("#totalProveedores").text(totalProveedores);
-        }).fail(function (xhr, status, err) {
-            console.error('Error ObtenerReporte:', status, err);
-            $("#totalCliente,#totalVentas,#totalProductos,#totalProveedores").text('0');
+            var Url ='@Url.Action("HistorialVentas", "Home")' +
+            "?fechaInicio=" + $('#txtfechainicio').val() +
+            "&fechaFin=" + $('#txtfechafinal').val() +
+            "&idTransaccion=" + $('#txtidtransaccion').val();
+
+            var tabladata;
+
+            tabladata = $("#tabla").DataTable({
+            responsive: true,
+            ordering: false,
+            ajax: {
+                url: Url,
+                type: "POST",
+                dataSrc: "data"
+            },
+            columns: [
+                { data: "fechaVenta" },
+                { data: "cliente" },
+                { data: "producto" },
+                { data: "precio" },
+                { data: "cantidad" },
+                { data: "total" },
+                { data: "idTransaccion" }
+            ],
+            language:
+            {
+                url: '//cdn.datatables.net/plug-ins/2.3.4/i18n/es-ES.json',
+            },
+            
         });
+
+        }); 
     </script>
+
+
+
 }
