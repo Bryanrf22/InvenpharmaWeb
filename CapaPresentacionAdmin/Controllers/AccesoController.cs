@@ -36,7 +36,7 @@ namespace CapaPresentacionAdmin.Controllers
             }
             else
             {
-                if (objUsuario.reestablecer)
+                if (objUsuario.reestablecer == true)
                 {
                     TempData["UsuarioID"] = objUsuario.UsuarioID;
                     return RedirectToAction("CambiarClave", "Acceso");
