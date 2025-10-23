@@ -1,17 +1,18 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
+
 <body class="bg-gradient-primary">
 
     <div class="container">
@@ -25,33 +26,42 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
+                            
+                            <div class="col-lg-8 mx-auto">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">¡Bienvenido!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="@Url.Action("Index", "Acceso")" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                autocomplete="off" name="correo" aria-describedby="emailHelp"
                                                 placeholder="Ingrese su Email...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Contraseña">
+                                                autocomplete="off" name="clave" placeholder="Contraseña">
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+
+                                        @{
+                                            if (ViewBag.Error != null)
+                                            {
+                                                <div class="form-group">
+                                                    <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+                                                </div>
+                                            }
+                                        }
+                                        
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                            Iniciar Sesión
+                                        </button>
                                         <hr>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Olvido su Contraseña?</a>
+                                        <a class="small" href="forgot-password.html">¿Olvido su Contraseña?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">¡Crea una Cuenta!</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,4 +86,5 @@
     <script src="js/sb-admin-2.min.js"></script>
 
 </body>
+
 </html>

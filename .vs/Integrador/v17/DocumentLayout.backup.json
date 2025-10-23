@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\views\\acceso\\cambiarclave.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\views\\acceso\\cambiarclave.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\views\\acceso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\views\\acceso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 202,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,7 +66,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "CambiarClave.cshtml",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Views\\Acceso\\CambiarClave.cshtml",
+              "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Views\\Acceso\\CambiarClave.cshtml",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Views\\Acceso\\CambiarClave.cshtml",
+              "RelativeToolTip": "CapaPresentacionAdmin\\Views\\Acceso\\CambiarClave.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T19:52:39.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Program.cs",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Program.cs",
@@ -70,12 +87,11 @@
               "RelativeToolTip": "CapaPresentacionAdmin\\Program.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T15:30:12.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T15:30:12.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\appsettings.json",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\appsettings.json",
@@ -87,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Views\\Acceso\\Index.cshtml",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Views\\Acceso\\Index.cshtml",
@@ -100,19 +116,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AccesoController.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
               "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T15:16:03.531Z"
+              "WhenOpened": "2025-10-23T15:16:03.531Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CN_Reporte.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Reporte.cs",
               "RelativeDocumentMoniker": "CapaNegocio\\CN_Reporte.cs",
@@ -124,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CD_Reporte.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CD_Reporte.cs",
               "RelativeDocumentMoniker": "CapaDatos\\CD_Reporte.cs",
@@ -136,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "HistorialVentas.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\HistorialVentas.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\HistorialVentas.cs",
@@ -148,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "DashBoard.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\DashBoard.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\DashBoard.cs",
@@ -160,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Controllers\\HomeController.cs",
@@ -172,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Views\\Home\\Index.cshtml",
