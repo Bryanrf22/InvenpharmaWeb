@@ -149,5 +149,66 @@ namespace CapaDatos
 
             return resultado;
         }
+
+        public bool CambiarClave(int idusuario, string nuevaClave, out string Mensaje)
+        {
+            bool resultado = false;
+            Mensaje = string.Empty;
+            Conexion conexion = new Conexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("CambiarClaveUsuario", conexion.AbrirConexion());
+                cmd.Parameters.AddWithValue("@UsuarioID", idusuario);
+                cmd.Parameters.AddWithValue("@NuevaClave", nuevaClave);
+                cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                Mensaje = ex.Message;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+            return resultado;
+        }
+
+        public bool ReestablecerClave(int idusuario, string clave, out string Mensaje)
+        {
+            bool resultado = false;
+            Mensaje = string.Empty;
+            Conexion conexion = new Conexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("ReestablecerClaveUsuario", conexion.AbrirConexion());
+                cmd.Parameters.AddWithValue("@UsuarioID", idusuario);
+                cmd.Parameters.AddWithValue("@Clave", clave);
+                cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                Mensaje = ex.Message;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+            return resultado;
+        }
+
+
+
     }
 }

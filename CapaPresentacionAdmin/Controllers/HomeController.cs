@@ -2,7 +2,9 @@ using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacionAdmin.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Diagnostics;
+using ClosedXML.Excel;
 
 namespace CapaPresentacionAdmin.Controllers
 {
@@ -94,6 +96,51 @@ namespace CapaPresentacionAdmin.Controllers
             oLista = new CN_Reporte().HistorialVentas(fechaInicio, fechaFin, idTransaccion);
             return Json(new { data = oLista });
         }
+
+        [HttpPost]
+        public FileResult ExportarVentas(string fechaInicio, string fechaFin, string idTransaccion)
+        {
+            List<HistorialVentas> oLista = new List<HistorialVentas>();
+            oLista = new CN_Reporte().HistorialVentas(fechaInicio, fechaFin, idTransaccion);
+
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Fecha Venta", typeof(string));
+            dt.Columns.Add("Cliente", typeof(string));
+            dt.Columns.Add("Producto", typeof(string));
+            dt.Columns.Add("Cantidad", typeof(int));
+            dt.Columns.Add("Precio", typeof(decimal));
+            dt.Columns.Add("Total", typeof(decimal));
+            dt.Columns.Add("ID Transacción", typeof(string));
+
+            foreach (HistorialVentas hv in oLista)
+            {
+                dt.Rows.Add(new object[] {
+                    hv.FechaVenta,
+                    hv.Usuario,
+                    hv.Producto,
+                    hv.Cantidad,
+                    hv.Precio,
+                    hv.Total,
+                    hv.TransaccionID
+                });
+            }
+            dt.TableName = "HistorialVentas";
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt);
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "HistorialVentas" + DateTime.Now.ToString("ddMMyyyy") + ".xlsx");
+                }
+            }
+
+
+        }
+
 
         #endregion Reportes
     }

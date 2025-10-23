@@ -277,6 +277,10 @@
               "target": "Package",
               "version": "[3.5.0.2, )"
             },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.105.0, )"
+            },
             "Font.Awesome": {
               "target": "Package",
               "version": "[5.15.4, )"

@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\views\\acceso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\views\\acceso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,34 +50,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 202,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CN_Reporte.cs",
-              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Reporte.cs",
-              "RelativeDocumentMoniker": "CapaNegocio\\CN_Reporte.cs",
-              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Reporte.cs",
-              "RelativeToolTip": "CapaNegocio\\CN_Reporte.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T18:35:44.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CD_Reporte.cs",
-              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CD_Reporte.cs",
-              "RelativeDocumentMoniker": "CapaDatos\\CD_Reporte.cs",
-              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CD_Reporte.cs",
-              "RelativeToolTip": "CapaDatos\\CD_Reporte.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAcwC4AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T18:28:07.573Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -72,7 +62,81 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Program.cs",
+              "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Program.cs",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Program.cs",
+              "RelativeToolTip": "CapaPresentacionAdmin\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T15:30:12.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\appsettings.json",
+              "RelativeDocumentMoniker": "CapaPresentacionAdmin\\appsettings.json",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\appsettings.json",
+              "RelativeToolTip": "CapaPresentacionAdmin\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-23T15:30:00.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Views\\Acceso\\Index.cshtml",
+              "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Views\\Acceso\\Index.cshtml",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Views\\Acceso\\Index.cshtml",
+              "RelativeToolTip": "CapaPresentacionAdmin\\Views\\Acceso\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T15:22:56.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AccesoController.cs",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
+              "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
+              "RelativeToolTip": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T15:16:03.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CN_Reporte.cs",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Reporte.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\CN_Reporte.cs",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Reporte.cs",
+              "RelativeToolTip": "CapaNegocio\\CN_Reporte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T18:35:44.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CD_Reporte.cs",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CD_Reporte.cs",
+              "RelativeDocumentMoniker": "CapaDatos\\CD_Reporte.cs",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CD_Reporte.cs",
+              "RelativeToolTip": "CapaDatos\\CD_Reporte.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwC4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T18:28:07.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "HistorialVentas.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\HistorialVentas.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\HistorialVentas.cs",
@@ -80,12 +144,11 @@
               "RelativeToolTip": "CapaEntidad\\HistorialVentas.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAgwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T18:24:25.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T18:24:25.26Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "DashBoard.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\DashBoard.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\DashBoard.cs",
@@ -93,34 +156,31 @@
               "RelativeToolTip": "CapaEntidad\\DashBoard.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T16:20:08.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T16:20:08.585Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\HomeController.cs",
               "RelativeToolTip": "CapaPresentacionAdmin\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAiwFoAAABuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T15:26:17.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T15:26:17.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "CapaPresentacionAdmin\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAABUAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAIBZwBUAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-14T02:20:02.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T02:20:02.008Z"
             }
           ]
         },

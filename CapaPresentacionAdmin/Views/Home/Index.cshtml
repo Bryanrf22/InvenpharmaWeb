@@ -91,18 +91,18 @@
         <i class="m-0 font-weight-bold text-primary">Historial de Ventas</i>
     </div>
     <div class="card-body">
-        <form>
+        <form action="@Url.Action("ExportarVentas","Home")" method="post">
             <div class="row align-items-end">
                 <div class="col-sm-2">
                     <div class="mb-2">
                         <label class="form-label">Fecha de Inicio:</label>
-                        <input class="form-control" type="text" id="txtfechainicio" name="fechainicio" />
+                        <input class="form-control" type="text" id="txtfechainicio" name="fechainicio" autocomplete="off" />
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="mb-2">
                         <label class="form-label">Fecha Final:</label>
-                        <input class="form-control" type="text" id="txtfechafinal" name="fechafinal" />
+                        <input class="form-control" type="text" id="txtfechafinal" name="fechafinal" autocomplete="off"/>
                     </div>
                 </div>
                 <div class="col-sm-2">

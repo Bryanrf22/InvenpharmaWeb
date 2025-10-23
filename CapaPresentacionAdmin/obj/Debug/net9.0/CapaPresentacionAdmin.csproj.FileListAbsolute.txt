@@ -550,3 +550,11 @@ C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\Capa
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\CapaPresentacionAdmin.genruntimeconfig.cache
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\ref\CapaPresentacionAdmin.dll
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\CapaPresentacionAdmin.sourcelink.json
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\ClosedXML.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\ClosedXML.Parser.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\DocumentFormat.OpenXml.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\ExcelNumberFormat.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\RBush.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\SixLabors.Fonts.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\System.IO.Packaging.dll
