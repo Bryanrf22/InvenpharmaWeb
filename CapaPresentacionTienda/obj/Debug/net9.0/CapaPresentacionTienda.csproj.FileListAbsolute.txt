@@ -211,3 +211,4 @@ C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\ref
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\CapaPresentacionTienda.pdb
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\CapaPresentacionTienda.genruntimeconfig.cache
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\ref\CapaPresentacionTienda.dll
+C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\CapaPresentacionTienda.sourcelink.json
