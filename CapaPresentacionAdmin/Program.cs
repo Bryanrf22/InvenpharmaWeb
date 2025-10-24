@@ -1,10 +1,21 @@
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Agregar autenticación por cookies
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Acceso/Index"; // ruta de login
+        options.AccessDeniedPath = "/Acceso/Index"; // ruta cuando no tiene permiso
+        options.ExpireTimeSpan = TimeSpan.FromHours(8);
+    });
 
 // Cargar configuración adicional si es necesario
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
@@ -32,6 +43,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+// Habilitar autenticación y autorización
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

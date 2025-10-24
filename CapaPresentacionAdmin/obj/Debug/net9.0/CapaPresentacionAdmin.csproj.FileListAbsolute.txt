@@ -558,4 +558,3 @@ C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\Exce
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\RBush.dll
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\SixLabors.Fonts.dll
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\bin\Debug\net9.0\System.IO.Packaging.dll
-C:\Users\LOQ\source\repos\Integrador\CapaPresentacionAdmin\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -2,12 +2,14 @@ using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacionAdmin.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using System.Diagnostics;
 using ClosedXML.Excel;
 
 namespace CapaPresentacionAdmin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

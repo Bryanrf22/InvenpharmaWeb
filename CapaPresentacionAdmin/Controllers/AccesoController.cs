@@ -1,10 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 using CapaEntidad;
 using CapaNegocio;
 
 namespace CapaPresentacionAdmin.Controllers
 {
+    [AllowAnonymous]
     public class AccesoController : Controller
     {
         public IActionResult Index()
@@ -24,7 +30,7 @@ namespace CapaPresentacionAdmin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string correo, string clave)
+        public async Task<IActionResult> Index(string correo, string clave)
         {
             Usuario? objUsuario = null;
 
@@ -44,6 +50,21 @@ namespace CapaPresentacionAdmin.Controllers
                 }
                 else
                 {
+
+                    // Crear claims y firmar al usuario con cookie
+                    var claims = new List<Claim>
+                    {
+                        // El modelo Usuario sólo expone Correo, usarlo como nombre identificador
+                        new Claim(ClaimTypes.Name, objUsuario.Correo ?? string.Empty),
+                        new Claim(ClaimTypes.Email, objUsuario.Correo ?? string.Empty),
+                        new Claim("UsuarioID", objUsuario.UsuarioID.ToString())
+                    };
+
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+
                     ViewBag.Error = null;
                     return RedirectToAction("Index", "Home");
                 }
@@ -56,7 +77,7 @@ namespace CapaPresentacionAdmin.Controllers
         [HttpPost]
         public IActionResult CambiarClave(string idUsuario, string claveActual, string claveNueva, string claveConfirmar)
         {
-            Usuario objUsuario = new Usuario();
+            Usuario? objUsuario = null;
             if (!int.TryParse(idUsuario, out int idUsr))
             {
                 ViewBag.Error = "Id de usuario inválido";
@@ -111,7 +132,7 @@ namespace CapaPresentacionAdmin.Controllers
         [HttpPost]
         public IActionResult ReestablecerClave(string correo)
         {
-            Usuario objUsuario = new Usuario();
+            Usuario? objUsuario = null;
             objUsuario = new CN_Usuarios().ListarUsuarios().Where(u => u.Correo == correo).FirstOrDefault();
 
             if (objUsuario == null)
@@ -134,6 +155,14 @@ namespace CapaPresentacionAdmin.Controllers
             }
 
             return View();
+        }
+
+
+        public async Task<IActionResult> CerrarSesion()
+        {
+            // Cerrar sesión (remover cookie)
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Acceso");
         }
 
 
