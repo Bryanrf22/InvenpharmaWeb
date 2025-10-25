@@ -95,7 +95,8 @@
 @section Scripts {
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
 
 
     <script>
@@ -152,8 +153,9 @@
                 $("#exampleModalLabel").text("Editar Usuario");
                 $("#txtID").val(json.usuarioID);
                 $("#txtCorreo").val(json.correo);
-                $("#cboAdmin").val(json.administrador == true ? 1 : 0);
-                $("#cboActivo").val(json.activo == true ? 1 : 0);
+                // asegurar que los select reciban valores de tipo string "1"/"0"
+                $("#cboAdmin").val(json.administrador == true ? "1" : "0");
+                $("#cboActivo").val(json.activo == true ? "1" : "0");
                 $("#mensajeError").hide();
             } else {
                 $("#exampleModalLabel").text("Agregar Usuario Nuevo");
@@ -218,10 +220,11 @@
 
         function Guardar() {
             var Usuario = {
-                usuarioID: $("#txtID").val(),
+                // enviar UsuarioID como número y comparar selects con strings para evitar coerciones impredecibles
+                usuarioID: parseInt($("#txtID").val() || "0", 10),
                 correo: $("#txtCorreo").val(),
-                administrador: $("#cboAdmin").val() == 1,
-                activo: $("#cboActivo").val() == 1
+                administrador: $("#cboAdmin").val() === "1",
+                activo: $("#cboActivo").val() === "1"
             };
 
             $.ajax({
@@ -232,7 +235,7 @@
                 dataType: "json",
                 beforeSend: function () {
                     $("#FormModal .modal-content").LoadingOverlay("show", {
-                        text: "Procesando...", 
+                        text: "Procesando...",
                         textResizeFactor: 0.14
                     });
                 },
@@ -261,8 +264,16 @@
                     }
                 },
                 error: function (xhr, status, err) {
+                    // mejor logging para facilitar diagnóstico (status HTTP y cuerpo de respuesta)
+                    console.error("Error AJAX GuardarUsuario:", status, err, xhr.status, xhr.responseText);
                     $("#FormModal .modal-content").LoadingOverlay("hide");
-                    $("#mensajeError").text("Error Ajax").show();
+                    var mensaje = "Ocurrió un error al procesar la solicitud.";
+                    // si el servidor devolvió JSON con mensaje, intentar parsearlo
+                    try {
+                        var json = JSON.parse(xhr.responseText);
+                        if (json && json.mensaje) mensaje = json.mensaje;
+                    } catch (e) { /* no JSON */ }
+                    $("#mensajeError").text(mensaje).show();
                 }
             });
         }
@@ -274,6 +285,3 @@
 
 
 }
-
-
-

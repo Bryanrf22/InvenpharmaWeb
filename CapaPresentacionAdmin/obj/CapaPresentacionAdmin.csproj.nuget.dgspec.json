@@ -4,14 +4,14 @@
     "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj": {}
   },
   "projects": {
-    "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj": {
+    "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj",
+        "projectUniqueName": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj",
         "projectName": "CapaDatos",
-        "projectPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj",
+        "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj",
         "packagesPath": "C:\\Users\\LOQ\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\obj\\",
+        "outputPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -175,8 +175,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj": {
-                "projectPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj"
+              "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj": {
+                "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaDatos\\CapaDatos.csproj"
               },
               "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj": {
                 "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj"

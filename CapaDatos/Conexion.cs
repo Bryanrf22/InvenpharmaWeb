@@ -4,7 +4,13 @@ namespace CapaDatos
 {
     public class Conexion
     {
-        public SqlConnection cn = new SqlConnection("Data Source=LAPTOP-JP09F1KB\\SQLEXPRESS;Initial Catalog=BDFarmaciaWeb;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+        // Se permite sobreescribir la cadena de conexión mediante la variable de entorno CONNECTION_STRING
+        private static readonly string _defaultConn = "Data Source=LAPTOP-JP09F1KB\\SQLEXPRESS;Initial Catalog=BDFarmaciaWeb;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        private static readonly string _connString = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("CONNECTION_STRING"))
+            ? Environment.GetEnvironmentVariable("CONNECTION_STRING")!
+            : _defaultConn;
+
+        public SqlConnection cn = new SqlConnection(_connString);
 
         public SqlConnection AbrirConexion()
         {

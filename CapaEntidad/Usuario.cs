@@ -8,5 +8,6 @@
         public bool administrador { get; set; }
         public bool activo { get; set; }
         public bool reestablecer { get; set; }
+        public string confirmarClave { get; set; }
     }
 }

@@ -13,6 +13,12 @@ namespace CapaPresentacionAdmin.Controllers
     [AllowAnonymous]
     public class AccesoController : Controller
     {
+        private readonly Microsoft.Extensions.Configuration.IConfiguration _config;
+
+        public AccesoController(Microsoft.Extensions.Configuration.IConfiguration config)
+        {
+            _config = config;
+        }
         public IActionResult Index()
         {
             return View();
@@ -33,43 +39,63 @@ namespace CapaPresentacionAdmin.Controllers
         public async Task<IActionResult> Index(string correo, string clave)
         {
             Usuario? objUsuario = null;
-
             objUsuario = new CN_Usuarios().ListarUsuarios().Where(u => u.Correo == correo && u.clave == CN_recursos.ConvertirSHA256(clave)).FirstOrDefault();
 
+            // Verificar credenciales
             if (objUsuario == null)
             {
                 ViewBag.Error = "Correo o Clave incorrectos";
                 return View();
             }
-            else
+
+            // Verificar si el usuario está activo
+            if (!objUsuario.activo)
             {
-                if (objUsuario.reestablecer == true)
+                ViewBag.Error = "El usuario no está activo. Contacte al administrador.";
+                return View();
+            }
+
+            // Verificar si el usuario es administrador para acceder al sistema de administración
+            // Si no es administrador, redirigir a la tienda (Index del HomeController de CapaPresentacionTienda)
+            if (!objUsuario.administrador)
+            {
+                var tiendaUrl = _config["TiendaUrl"];
+                if (!string.IsNullOrWhiteSpace(tiendaUrl))
                 {
-                    TempData["UsuarioID"] = objUsuario.UsuarioID;
-                    return RedirectToAction("CambiarClave", "Acceso");
+                    tiendaUrl = tiendaUrl.TrimEnd('/');
+                    return Redirect(tiendaUrl + "/Home/Index");
                 }
                 else
                 {
-
-                    // Crear claims y firmar al usuario con cookie
-                    var claims = new List<Claim>
-                    {
-                        // El modelo Usuario sólo expone Correo, usarlo como nombre identificador
-                        new Claim(ClaimTypes.Name, objUsuario.Correo ?? string.Empty),
-                        new Claim(ClaimTypes.Email, objUsuario.Correo ?? string.Empty),
-                        new Claim("UsuarioID", objUsuario.UsuarioID.ToString())
-                    };
-
-                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
-
-                    ViewBag.Error = null;
+                    // Fallback: redirigir al Home/Index local
                     return RedirectToAction("Index", "Home");
                 }
-
             }
+
+            // Si requiere reestablecer clave
+            if (objUsuario.reestablecer == true)
+            {
+                TempData["UsuarioID"] = objUsuario.UsuarioID;
+                return RedirectToAction("CambiarClave", "Acceso");
+            }
+
+            // Crear claims y firmar al usuario con cookie
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, objUsuario.Correo ?? string.Empty),
+                new Claim(ClaimTypes.Email, objUsuario.Correo ?? string.Empty),
+                new Claim("UsuarioID", objUsuario.UsuarioID.ToString()),
+                new Claim(ClaimTypes.Role, "Admin")
+            };
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+
+            ViewBag.Error = null;
+            // Redirigir al Home del Admin
+            return RedirectToAction("Index", "Home");
         }
 
 

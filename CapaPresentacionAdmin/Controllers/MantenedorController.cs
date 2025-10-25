@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Text.Json;
 using System.Globalization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CapaPresentacionAdmin.Controllers
 {
+    [Authorize]
     public class MantenedorController : Controller
     {
         //-----------------------------------------------------CATEGORIA-----------------------------------------------------//

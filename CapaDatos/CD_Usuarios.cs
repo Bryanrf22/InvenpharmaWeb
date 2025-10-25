@@ -33,6 +33,13 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
+                // Registrar la excepción para facilitar el diagnóstico de problemas de conexión/consulta
+                try
+                {
+                    System.Console.Error.WriteLine($"[CD_Usuarios.ListarUsuarios] Excepción: {ex}");
+                }
+                catch { }
+
                 lista = new List<Usuario>();
             }
             finally
@@ -207,6 +214,40 @@ namespace CapaDatos
                 conexion.CerrarConexion();
             }
             return resultado;
+        }
+
+        public int AgregarCliente(Usuario obj, out string Mensaje)
+        {
+            int idautogenerado = 0;
+            Mensaje = string.Empty;
+            Conexion conexion = new Conexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("AgregarCliente", conexion.AbrirConexion());
+
+                cmd.Parameters.AddWithValue("@Correo", obj.Correo);
+                cmd.Parameters.AddWithValue("@Clave", obj.clave);
+                cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.ExecuteNonQuery();
+
+                idautogenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
+                Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                idautogenerado = 0;
+                Mensaje = ex.Message;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+            return idautogenerado;
+
         }
 
 

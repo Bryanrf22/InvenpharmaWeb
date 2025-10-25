@@ -26,7 +26,7 @@ namespace CapaNegocio
                 string clave = CN_recursos.GenerarClave();
 
                 string asunto = "Creación de Cuenta";
-                string mensajeCorreo = "<h3>Su cuenta fue creada correctamente</h3></br><p>Su contraseña temporal para acceder es: !clave!</p>";
+                string mensajeCorreo = "<h3>Su cuenta fue creada correctamente por un administrador</h3></br><p>Su contraseña temporal para acceder es: !clave!</p>";
                 mensajeCorreo = mensajeCorreo.Replace("!clave!", clave);
 
                 bool respuesta = CN_recursos.EnviarCorreo(obj.Correo, asunto, mensajeCorreo);
@@ -118,6 +118,28 @@ namespace CapaNegocio
             {
                 Mensaje = "No se pudo reestablecer la clave";
                 return false;
+            }
+        }
+
+        public int AgregarCliente(Usuario obj, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+
+            if (string.IsNullOrEmpty(obj.Correo) || string.IsNullOrWhiteSpace(obj.Correo))
+            {
+                Mensaje = "El correo del usuario no puede estar vacío";
+            }
+
+            if (string.IsNullOrEmpty(Mensaje))
+            {
+                string clave = CN_recursos.GenerarClave();
+
+                obj.clave = CN_recursos.ConvertirSHA256(clave);
+                return objCapaDatos.AgregarCliente(obj, out Mensaje);
+            }
+            else
+            {
+                return 0;
             }
         }
     }
