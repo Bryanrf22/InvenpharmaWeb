@@ -212,4 +212,3 @@ C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\Cap
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\CapaPresentacionTienda.genruntimeconfig.cache
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\ref\CapaPresentacionTienda.dll
 C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\CapaPresentacionTienda.sourcelink.json
-C:\Users\LOQ\source\repos\Integrador\CapaPresentacionTienda\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

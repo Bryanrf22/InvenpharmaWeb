@@ -8,6 +8,16 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+app.Lifetime.ApplicationStarted.Register(() =>
+{
+    logger.LogInformation("Tienda: Application started and listening.");
+});
+app.Lifetime.ApplicationStopping.Register(() =>
+{
+    logger.LogWarning("Tienda: Application is stopping...");
+});
+
 // Configure localization: usar 'es-NI' por defecto para que el model binder interprete decimales locales
 var supportedCultures = new[] { new CultureInfo("es-NI"), new CultureInfo("es") };
 var localizationOptions = new RequestLocalizationOptions
@@ -39,4 +49,13 @@ app.MapControllerRoute(
     .WithStaticAssets();
 
 
-app.Run();
+try
+{
+    app.Run();
+}
+catch (Exception ex)
+{
+    // Log unexpected exceptions during startup/run
+    logger.LogCritical(ex, "Tienda: Host terminated unexpectedly");
+    throw;
+}
