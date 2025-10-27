@@ -4,30 +4,57 @@ namespace CapaDatos
 {
     public class Conexion
     {
-        // Se permite sobreescribir la cadena de conexión mediante la variable de entorno CONNECTION_STRING
+
         private static readonly string _defaultConn = "Data Source=LAPTOP-JP09F1KB\\SQLEXPRESS;Initial Catalog=BDFarmaciaWeb;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
         private static readonly string _connString = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("CONNECTION_STRING"))
             ? Environment.GetEnvironmentVariable("CONNECTION_STRING")!
             : _defaultConn;
 
-        public SqlConnection cn = new SqlConnection(_connString);
+        
+        private SqlConnection? cn;
 
         public SqlConnection AbrirConexion()
         {
-            if (cn.State == System.Data.ConnectionState.Closed)
+            try
             {
-                cn.Open();
+                if (cn == null)
+                {
+                    cn = new SqlConnection(_connString);
+                }
+
+                if (cn.State == System.Data.ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
+
+                return cn;
             }
-            return cn;
+            catch (Exception ex)
+            {
+                try { System.Console.Error.WriteLine($"[Conexion.AbrirConexion] Error al abrir conexión: {ex.Message}"); } catch { }
+                throw;
+            }
         }
 
-        public SqlConnection CerrarConexion()
+        public void CerrarConexion()
         {
-            if (cn.State == System.Data.ConnectionState.Open)
+            try
             {
-                cn.Close();
+                if (cn != null)
+                {
+                    if (cn.State == System.Data.ConnectionState.Open)
+                    {
+                        cn.Close();
+                    }
+
+                    cn.Dispose();
+                    cn = null;
+                }
             }
-            return cn;
+            catch (Exception ex)
+            {
+                try { System.Console.Error.WriteLine($"[Conexion.CerrarConexion] Error al cerrar conexión: {ex.Message}"); } catch { }
+            }
         }
     }
 }

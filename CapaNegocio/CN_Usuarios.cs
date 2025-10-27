@@ -129,18 +129,25 @@ namespace CapaNegocio
             {
                 Mensaje = "El correo del usuario no puede estar vacío";
             }
+            if (string.IsNullOrEmpty(obj.clave) || string.IsNullOrWhiteSpace(obj.clave))
+            {
+                Mensaje = "La clave no puede estar vacía";
+            }
 
             if (string.IsNullOrEmpty(Mensaje))
             {
-                string clave = CN_recursos.GenerarClave();
-
-                obj.clave = CN_recursos.ConvertirSHA256(clave);
+                obj.clave = CN_recursos.ConvertirSHA256(obj.clave);
                 return objCapaDatos.AgregarCliente(obj, out Mensaje);
             }
             else
             {
                 return 0;
             }
+        }
+
+        public List<Usuario> ListarClientes()
+        {
+            return objCapaDatos.ListarClientes();
         }
     }
 }

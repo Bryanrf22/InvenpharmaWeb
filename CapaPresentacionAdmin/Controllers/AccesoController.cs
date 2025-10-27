@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Net;
+using System;
 
 using CapaEntidad;
 using CapaNegocio;
@@ -21,6 +24,8 @@ namespace CapaPresentacionAdmin.Controllers
         }
         public IActionResult Index()
         {
+            // Exponer la URL de la tienda a la vista para redirecciones (si está configurada)
+            ViewBag.TiendaUrl = _config["TiendaUrl"]?.ToString()?.TrimEnd('/');
             return View();
         }
 
@@ -41,45 +46,51 @@ namespace CapaPresentacionAdmin.Controllers
             Usuario? objUsuario = null;
             objUsuario = new CN_Usuarios().ListarUsuarios().Where(u => u.Correo == correo && u.clave == CN_recursos.ConvertirSHA256(clave)).FirstOrDefault();
 
-            // Verificar credenciales
+
             if (objUsuario == null)
             {
                 ViewBag.Error = "Correo o Clave incorrectos";
                 return View();
             }
 
-            // Verificar si el usuario está activo
             if (!objUsuario.activo)
             {
                 ViewBag.Error = "El usuario no está activo. Contacte al administrador.";
                 return View();
             }
 
-            // Verificar si el usuario es administrador para acceder al sistema de administración
-            // Si no es administrador, redirigir a la tienda (Index del HomeController de CapaPresentacionTienda)
             if (!objUsuario.administrador)
             {
-                var tiendaUrl = _config["TiendaUrl"];
-                if (!string.IsNullOrWhiteSpace(tiendaUrl))
-                {
-                    tiendaUrl = tiendaUrl.TrimEnd('/');
-                    return Redirect(tiendaUrl + "/Home/Index");
-                }
-                else
-                {
-                    // Fallback: redirigir al Home/Index local
-                    return RedirectToAction("Index", "Home");
-                }
+                // var tiendaUrl = _config["TiendaUrl"];
+                // if (!string.IsNullOrWhiteSpace(tiendaUrl))
+                // {
+                //     tiendaUrl = tiendaUrl.TrimEnd('/');
+                //     var target = tiendaUrl + "/Home/Index";
+                //     // Comprobar si la tienda responde antes de redirigir; si no, usar fallback local
+                //     if (await IsUrlReachableAsync(target))
+                //     {
+                //         return Redirect(target);
+                //     }
+                //     else
+                //     {
+                //         return RedirectToAction("Index", "Home");
+                //     }
+                // }
+                // else
+                // {
+                //     return RedirectToAction("Index", "Home");
+                // }
+
+                ViewBag.Error = "El usuario no tiene permisos de administrador.";
+                return View();
             }
 
-            // Si requiere reestablecer clave
             if (objUsuario.reestablecer == true)
             {
                 TempData["UsuarioID"] = objUsuario.UsuarioID;
                 return RedirectToAction("CambiarClave", "Acceso");
             }
 
-            // Crear claims y firmar al usuario con cookie
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, objUsuario.Correo ?? string.Empty),
@@ -189,6 +200,37 @@ namespace CapaPresentacionAdmin.Controllers
             // Cerrar sesión (remover cookie)
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Acceso");
+        }
+
+        // Comprueba si una URL responde antes de redirigir (acepta certificados auto-firmados)
+        private async Task<bool> IsUrlReachableAsync(string url)
+        {
+            try
+            {
+                using var handler = new HttpClientHandler();
+                // En entornos de desarrollo aceptar certificados autofirmados
+                handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+                using var client = new HttpClient(handler)
+                {
+                    Timeout = TimeSpan.FromSeconds(2)
+                };
+
+                var request = new HttpRequestMessage(HttpMethod.Head, url);
+                var response = await client.SendAsync(request);
+
+                // Si el servidor no admite HEAD, intentar GET
+                if (response.StatusCode == HttpStatusCode.MethodNotAllowed)
+                {
+                    response = await client.GetAsync(url);
+                }
+
+                int code = (int)response.StatusCode;
+                return code >= 200 && code < 400;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 

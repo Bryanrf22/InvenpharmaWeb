@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentaciontienda\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8D60B75-9C73-430E-97D6-46B15BD76159}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\loq\\source\\repos\\integrador\\capanegocio\\cn_usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8D60B75-9C73-430E-97D6-46B15BD76159}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 202,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,13 +34,37 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccesoController.cs",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
+              "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
+              "RelativeToolTip": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:23:56.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CN_Usuarios.cs",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Usuarios.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\CN_Usuarios.cs",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Usuarios.cs",
+              "RelativeToolTip": "CapaNegocio\\CN_Usuarios.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAJMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:14:20.385Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AccesoController.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\AccesoController.cs",
               "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "CapaPresentacionTienda\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAowAAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-24T21:10:00.583Z",
               "EditorCaption": ""

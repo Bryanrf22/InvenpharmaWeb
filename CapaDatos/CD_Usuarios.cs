@@ -6,6 +6,7 @@ namespace CapaDatos
 {
     public class CD_Usuarios
     {
+        #region Usuarios
         public List<Usuario> ListarUsuarios()
         {
             List<Usuario> lista = new List<Usuario>();
@@ -215,7 +216,10 @@ namespace CapaDatos
             }
             return resultado;
         }
+        #endregion
 
+
+        #region Clientes
         public int AgregarCliente(Usuario obj, out string Mensaje)
         {
             int idautogenerado = 0;
@@ -251,6 +255,49 @@ namespace CapaDatos
         }
 
 
+        public List<Usuario> ListarClientes()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            Conexion conexion = new Conexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("ListarClientes", conexion.AbrirConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Usuario()
+                        {
+                            UsuarioID = Convert.ToInt32(dr["UsuarioID"]),
+                            Correo = dr["Correo"].ToString(),
+                            clave = dr["clave"].ToString(),
+                            reestablecer = Convert.ToBoolean(dr["reestablecer"])
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                try
+                {
+                    System.Console.Error.WriteLine($"[CD_Usuarios.ListarClientes] Excepción: {ex}");
+                }
+                catch { }
+
+                lista = new List<Usuario>();
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+            return lista;
+        }
+
+
+        #endregion
     }
 }
