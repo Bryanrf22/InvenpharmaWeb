@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentaciontienda\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 202,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +38,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "TiendaController.cs",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "RelativeToolTip": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T20:57:42.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AccesoController.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
@@ -46,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CN_Usuarios.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Usuarios.cs",
               "RelativeDocumentMoniker": "CapaNegocio\\CN_Usuarios.cs",
@@ -58,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AccesoController.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\AccesoController.cs",

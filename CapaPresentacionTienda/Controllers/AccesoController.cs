@@ -58,31 +58,112 @@ namespace CapaPresentacionTienda.Controllers
         [HttpPost]
         public IActionResult Index(string correo, string clave)
         {
-            Usuario objeto = null;
-            objeto = cnUsuarios.ListarClientes().Where(u => u.Correo == correo && u.clave == CN_recursos.ConvertirSHA256(clave)).FirstOrDefault();
+            // validar parámetros básicos
+            if (string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(clave))
+            {
+                ViewBag.Error = "Debe ingresar correo y contraseña";
+                return View();
+            }
+
+            Usuario? objeto = cnUsuarios.ListarClientes()
+                .Where(u => u.Correo == correo && u.clave == CN_recursos.ConvertirSHA256(clave))
+                .FirstOrDefault();
 
             if (objeto == null)
             {
                 ViewBag.Error = "Correo o contraseña incorrecta";
                 return View();
             }
+
+            // Verificar que el usuario esté activo
+            if (!objeto.activo)
+            {
+                ViewBag.Error = "Usuario inactivo. Contacte al administrador.";
+                return View();
+            }
+
+            if (objeto.reestablecer)
+            {
+                TempData["UsuarioID"] = objeto.UsuarioID;
+                return RedirectToAction("CambiarClave", "Acceso");
+            }
+
+            // Guardar información mínima en sesión
+            HttpContext.Session.SetInt32("UsuarioID", objeto.UsuarioID);
+            HttpContext.Session.SetString("Correo", objeto.Correo ?? string.Empty);
+            HttpContext.Session.SetString("Administrador", objeto.administrador.ToString());
+
+            // Redirigir al home de la tienda
+            return RedirectToAction("Index", "Tienda");
+        }
+
+
+        [HttpPost]
+        public IActionResult RestablecerClave(string correo)
+        {
+            Usuario? objUsuario = null;
+            objUsuario = new CN_Usuarios().ListarClientes().Where(u => u.Correo == correo).FirstOrDefault();
+
+            if (objUsuario == null)
+            {
+                ViewBag.Error = "No se encontró un usuario con ese correo";
+                return View();
+            }
+
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Usuarios().ReestablecerClave(objUsuario.UsuarioID, correo, out mensaje);
+
+            if (respuesta)
+            {
+                ViewBag.Error = null;
+                return RedirectToAction("Index", "Acceso");
+            }
             else
             {
-                if (objeto.reestablecer)
-                {
-                    TempData["UsuarioID"] = objeto.UsuarioID;
-                    return RedirectToAction("CambiarClave", "Acceso");
-                }
-                else
-                {
-                    HttpContext.Session.SetInt32("UsuarioID", objeto.UsuarioID);
-                    HttpContext.Session.SetString("Correo", objeto.Correo);
-                    HttpContext.Session.SetString("Administrador", objeto.administrador.ToString());
-                    return RedirectToAction("Index", "Home");
-                }
+                ViewBag.Error = mensaje;
             }
 
             return View();
         }
+
+
+
+
+        [HttpPost]
+        public IActionResult CambiarClave(int idUsuario, string claveNueva, string confirmarClave)
+        {
+            if (claveNueva != confirmarClave)
+            {
+                TempData["UsuarioID"] = idUsuario;
+                ViewBag.Error = "Las contraseñas no coinciden";
+                return View();
+            }
+
+            int idUsr = idUsuario;
+
+            if (idUsr == 0)
+            {
+                ViewBag.Error = "Usuario no válido";
+                return View();
+            }
+
+            // Cambiar la contraseña
+            string mensaje = string.Empty;
+            bool resultado = new CN_Usuarios().CambiarClave(idUsr, CN_recursos.ConvertirSHA256(claveNueva), out mensaje);
+
+            if (resultado)
+            {
+                ViewBag.Error = null;
+                return RedirectToAction("Index", "Acceso");
+            }
+            else
+            {
+                ViewBag.Error = mensaje;
+            }
+
+            return View();
+
+        }
+
     }
 }
