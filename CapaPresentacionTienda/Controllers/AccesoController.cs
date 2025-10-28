@@ -29,6 +29,58 @@ namespace CapaPresentacionTienda.Controllers
         }
 
         [HttpPost]
+        public IActionResult CambiarClave(string idUsuario, string claveActual, string claveNueva, string claveConfirmar)
+        {
+            Usuario? objUsuario = null;
+            if (!int.TryParse(idUsuario, out int idUsr))
+            {
+                ViewBag.Error = "Id de usuario inválido";
+                return View();
+            }
+
+            objUsuario = new CN_Usuarios().ListarClientes().Where(u => u.UsuarioID == idUsr).FirstOrDefault();
+
+            if (objUsuario == null)
+            {
+                ViewBag.Error = "Usuario no encontrado";
+                return View();
+            }
+
+            if (objUsuario.clave != CN_recursos.ConvertirSHA256(claveActual))
+            {
+                TempData["UsuarioID"] = idUsuario;
+                ViewData["vClaveActual"] = "";
+
+                ViewBag.Error = "La clave actual no es correcta";
+                return View();
+            }
+            else if (claveNueva != claveConfirmar)
+            {
+                TempData["UsuarioID"] = idUsuario;
+                ViewData["vClaveActual"] = claveActual;
+                ViewBag.Mensaje = "Las nuevas claves no coinciden";
+                return View();
+            }
+
+            ViewData["vClaveActual"] = "";
+
+            string mensaje = string.Empty;
+
+            bool respuesta = new CN_Usuarios().CambiarClave(idUsr, claveNueva, out mensaje);
+
+            if (respuesta)
+            {
+                return RedirectToAction("Index", "Acceso");
+            }
+            else
+            {
+                TempData["UsuarioID"] = idUsuario;
+                ViewBag.Error = mensaje;
+                return View();
+            }
+        }
+
+        [HttpPost]
         public IActionResult RegistroCliente(Usuario objeto)
         {
             int resultado;
@@ -124,45 +176,6 @@ namespace CapaPresentacionTienda.Controllers
             }
 
             return View();
-        }
-
-
-
-
-        [HttpPost]
-        public IActionResult CambiarClave(int idUsuario, string claveNueva, string confirmarClave)
-        {
-            if (claveNueva != confirmarClave)
-            {
-                TempData["UsuarioID"] = idUsuario;
-                ViewBag.Error = "Las contraseñas no coinciden";
-                return View();
-            }
-
-            int idUsr = idUsuario;
-
-            if (idUsr == 0)
-            {
-                ViewBag.Error = "Usuario no válido";
-                return View();
-            }
-
-            // Cambiar la contraseña
-            string mensaje = string.Empty;
-            bool resultado = new CN_Usuarios().CambiarClave(idUsr, CN_recursos.ConvertirSHA256(claveNueva), out mensaje);
-
-            if (resultado)
-            {
-                ViewBag.Error = null;
-                return RedirectToAction("Index", "Acceso");
-            }
-            else
-            {
-                ViewBag.Error = mensaje;
-            }
-
-            return View();
-
         }
 
     }
