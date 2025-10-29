@@ -24,8 +24,6 @@ namespace CapaPresentacionAdmin.Controllers
         }
         public IActionResult Index()
         {
-            // Exponer la URL de la tienda a la vista para redirecciones (si está configurada)
-            ViewBag.TiendaUrl = _config["TiendaUrl"]?.ToString()?.TrimEnd('/');
             return View();
         }
 

@@ -145,7 +145,6 @@ go
 
 
 
-
 create proc AgregarCliente(
 @Correo varchar(500),
 @Clave varchar(250),
