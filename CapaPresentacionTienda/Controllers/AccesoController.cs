@@ -1,5 +1,7 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CapaPresentacionTienda.Controllers
@@ -128,7 +130,7 @@ namespace CapaPresentacionTienda.Controllers
             }
 
             // Verificar que el usuario esté activo
-            if (!objeto.activo)
+            if (objeto.activo == false)
             {
                 ViewBag.Error = "Usuario inactivo. Contacte al administrador.";
                 return View();
@@ -176,6 +178,14 @@ namespace CapaPresentacionTienda.Controllers
             }
 
             return View();
+        }
+
+
+        public async Task<IActionResult> CerrarSesion()
+        {
+            // Cerrar sesión (remover cookie)
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Acceso");
         }
 
     }

@@ -8,12 +8,19 @@
 
   <ItemGroup>
     <PackageReference Include="Antlr" Version="3.5.0.2" />
-    <PackageReference Include="bootstrap" Version="5.3.8" />
+    <PackageReference Include="bootstrap" Version="5.3.8">
+      <ExcludeAssets>contentFiles</ExcludeAssets>
+    </PackageReference>
     <PackageReference Include="Font.Awesome" Version="5.15.4" />
-    <PackageReference Include="jQuery" Version="3.7.1" />
-    <PackageReference Include="jQuery.Validation" Version="1.21.0" />
+    <PackageReference Include="jQuery" Version="3.7.1">
+      <ExcludeAssets>contentFiles</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="jQuery.Validation" Version="1.21.0">
+      <ExcludeAssets>contentFiles</ExcludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
     <PackageReference Include="Microsoft.AspNet.Mvc.es" Version="5.3.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>

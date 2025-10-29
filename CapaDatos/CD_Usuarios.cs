@@ -273,6 +273,8 @@ namespace CapaDatos
                             UsuarioID = Convert.ToInt32(dr["UsuarioID"]),
                             Correo = dr["Correo"].ToString(),
                             clave = dr["clave"].ToString(),
+                            administrador = Convert.ToBoolean(dr["administrador"]),
+                            activo = Convert.ToBoolean(dr["activo"]),
                             reestablecer = Convert.ToBoolean(dr["reestablecer"])
                         });
                     }

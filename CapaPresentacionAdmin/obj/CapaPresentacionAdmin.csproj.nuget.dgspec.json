@@ -302,18 +302,22 @@
               "version": "[1.0.1, )"
             },
             "bootstrap": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[5.3.8, )"
             },
             "jQuery": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[3.7.1, )"
             },
             "jQuery.Validation": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[1.21.0, )"
             },
             "jquery.datatables": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[1.10.15, )"
             }

@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">¡Bienvenido!</h1>
+                                    </div>
+                                    <form class="user" action="@Url.Action("Index","Acceso")" method="post">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user" autocomplete="off"
+                                                name="correo" aria-describedby="emailHelp"
+                                                placeholder="Correo electrónico">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" autocomplete="off"
+                                                name="clave" placeholder="Contraseña">
+                                        </div>
+                                        @{
+                                            if (ViewBag.Error != null)
+                                            {
+                                                <div class="form-group">
+                                                    <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+                                                </div>
+                                            }
+                                        }
+                                        <button href="index.html" type="submit" class="btn btn-primary btn-user btn-block">
+                                            Iniciar Sesión
+                                        </button>
+                                        <hr>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="@Url.Action("RestablecerClave", "Acceso")">¿Olvidaste tu contraseña?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="@Url.Action("RegistroCliente", "Acceso")">¿No tienes una cuenta? Regístrate aquí</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="c:\users\loq\.nuget\packages\bootstrap\5.3.8\contentfiles\any\any\wwwroot\js\bootstrap.bundle.min.js"></script>
+    <script src="c:\users\loq\.nuget\packages\bootstrap\5.3.8\contentfiles\any\any\wwwroot\js\bootstrap.bundle.js"></script>
+    <script src="c:\users\loq\.nuget\packages\bootstrap\5.3.8\contentfiles\any\any\wwwroot\js\bootstrap.esm.min.js"></script>
+    <script src="c:\users\loq\.nuget\packages\bootstrap\5.3.8\contentfiles\any\any\wwwroot\js\bootstrap.esm.js"></script>
+    <script src="c:\users\loq\.nuget\packages\bootstrap\5.3.8\contentfiles\any\any\wwwroot\js\bootstrap.min.js"></script>
+    <script src="c:\users\loq\.nuget\packages\bootstrap\5.3.8\contentfiles\any\any\wwwroot\js\bootstrap.js"></script>
+    <script src="~/js/site.js"></script>
+
+</body>
+</html>

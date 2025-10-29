@@ -3,16 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.Compression.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentaciontienda\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{347656D9-807A-4DE9-A5FD-DF3000E4E49E}|CapaPresentacionAdmin\\CapaPresentacionAdmin.csproj|solutionrelative:capapresentacionadmin\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentaciontienda\\views\\acceso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\acceso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8D60B75-9C73-430E-97D6-46B15BD76159}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\loq\\source\\repos\\integrador\\capanegocio\\cn_usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8D60B75-9C73-430E-97D6-46B15BD76159}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\loq\\source\\repos\\integrador\\capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67C34FA1-EC6C-48E8-8BC9-9D15CD19AA16}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 202,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,40 +37,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccesoController.cs",
-              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
-              "RelativeDocumentMoniker": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
-              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
-              "RelativeToolTip": "CapaPresentacionAdmin\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T16:23:56.635Z"
+              "DocumentIndex": 0,
+              "Title": "Microsoft.NET.Sdk.StaticWebAssets.Compression.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.Compression.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.Compression.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.Compression.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.Compression.targets",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAcwHIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-10-28T17:06:36.342Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CN_Usuarios.cs",
-              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Usuarios.cs",
-              "RelativeDocumentMoniker": "CapaNegocio\\CN_Usuarios.cs",
-              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaNegocio\\CN_Usuarios.cs",
-              "RelativeToolTip": "CapaNegocio\\CN_Usuarios.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAJMAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T16:14:20.385Z"
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Views\\Acceso\\Index.cshtml",
+              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Acceso\\Index.cshtml",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Views\\Acceso\\Index.cshtml",
+              "RelativeToolTip": "CapaPresentacionTienda\\Views\\Acceso\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-28T04:48:40.147Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "TiendaController.cs",
+              "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "RelativeToolTip": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T20:57:42.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AccesoController.cs",
               "DocumentMoniker": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\AccesoController.cs",
               "ToolTip": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "CapaPresentacionTienda\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAowAAAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwBsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T21:10:00.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T21:10:00.583Z"
             }
           ]
         },
@@ -75,6 +90,10 @@
           "DockedHeight": 69,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"

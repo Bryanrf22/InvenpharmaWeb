@@ -1621,8 +1621,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj": {
-              "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj"
+            "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj": {
+              "projectPath": "c:\\Users\\LOQ\\source\\repos\\Integrador\\CapaEntidad\\CapaEntidad.csproj"
             }
           }
         }

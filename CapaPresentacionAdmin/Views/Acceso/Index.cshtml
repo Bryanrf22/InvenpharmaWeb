@@ -35,12 +35,12 @@
                                     <form class="user" action="@Url.Action("Index", "Acceso")" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                autocomplete="off" name="correo" aria-describedby="emailHelp"
-                                                placeholder="Ingrese su Email...">
+                                                   autocomplete="off" name="correo" aria-describedby="emailHelp"
+                                                   placeholder="Ingrese su Email...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                autocomplete="off" name="clave" placeholder="Contraseña">
+                                                   autocomplete="off" name="clave" placeholder="Contraseña">
                                         </div>
 
                                         @{
@@ -59,24 +59,12 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="@Url.Action("ReestablecerClave", "Acceso")">¿Olvido su
-                                            Contraseña?</a>
+                                        <a class="small" href="@Url.Action("ReestablecerClave", "Acceso")">
+                                            ¿Olvido su
+                                            Contraseña?
+                                        </a>
                                     </div>
-                                    <div class="text-center">
-                                        @{
-                                            var tiendaUrl = ViewBag.TiendaUrl as string;
-                                            string registroUrl = string.Empty;
-                                            if (!string.IsNullOrWhiteSpace(tiendaUrl))
-                                            {
-                                                registroUrl = tiendaUrl + "/Acceso/Index";
-                                                                                }
-                                            else
-                                            {
-                                                // Fallback local si no está configurada la TiendaUrl
-                                                registroUrl = Url.Action("Index", "Acceso") ?? string.Empty;
-                                            }
-                                        }
-                                        <a class="small" href="@registroUrl">Crear una Cuenta!</a>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -89,17 +77,5 @@
         </div>
 
     </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
 </body>
-
 </html>
