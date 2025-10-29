@@ -293,6 +293,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "SweetAlert.Bootstrap": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
             "bootstrap": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
@@ -302,6 +306,10 @@
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[3.7.1, )"
+            },
+            "jQuery.LoadingOverlay": {
+              "target": "Package",
+              "version": "[2.1.5, )"
             },
             "jQuery.Validation": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",

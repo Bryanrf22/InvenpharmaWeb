@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "T+YEtJQno6c=",
+  "dgSpecHash": "A+fzVGR2hdM=",
   "success": true,
   "projectFilePath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,7 @@
     "C:\\Users\\LOQ\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\jquery\\3.7.1\\jquery.3.7.1.nupkg.sha512",
+    "C:\\Users\\LOQ\\.nuget\\packages\\jquery.loadingoverlay\\2.1.5\\jquery.loadingoverlay.2.1.5.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\jquery.validation\\1.21.0\\jquery.validation.1.21.0.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\microsoft.aspnet.mvc\\5.3.0\\microsoft.aspnet.mvc.5.3.0.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\microsoft.aspnet.mvc.es\\5.3.0\\microsoft.aspnet.mvc.es.5.3.0.nupkg.sha512",
@@ -122,6 +123,7 @@
     "C:\\Users\\LOQ\\.nuget\\packages\\nuget.projectmodel\\6.11.0\\nuget.projectmodel.6.11.0.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
+    "C:\\Users\\LOQ\\.nuget\\packages\\sweetalert.bootstrap\\1.0.1\\sweetalert.bootstrap.1.0.1.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\system.clientmodel\\1.5.1\\system.clientmodel.1.5.1.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
@@ -148,13 +150,14 @@
     "C:\\Users\\LOQ\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\system.text.json\\9.0.5\\system.text.json.9.0.5.nupkg.sha512",
     "C:\\Users\\LOQ\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
-    "C:\\Users\\LOQ\\.nuget\\packages\\system.threading.tasks.dataflow\\8.0.0\\system.threading.tasks.dataflow.8.0.0.nupkg.sha512"
+    "C:\\Users\\LOQ\\.nuget\\packages\\system.threading.tasks.dataflow\\8.0.0\\system.threading.tasks.dataflow.8.0.0.nupkg.sha512",
+    "C:\\Users\\LOQ\\.nuget\\packages\\twitter.bootstrap\\3.0.1.1\\twitter.bootstrap.3.0.1.1.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "Package 'Antlr 3.5.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"Antlr 3.5.0.2\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
@@ -166,7 +169,7 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "Package 'Microsoft.AspNet.Mvc 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"Microsoft.AspNet.Mvc 5.3.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
@@ -178,7 +181,7 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "Package 'Microsoft.AspNet.Mvc.es 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"Microsoft.AspNet.Mvc.es 5.3.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
@@ -190,7 +193,7 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "Package 'Microsoft.AspNet.Razor 3.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"Microsoft.AspNet.Razor 3.3.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
@@ -202,7 +205,7 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "Package 'Microsoft.AspNet.WebPages 3.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"Microsoft.AspNet.WebPages 3.3.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
@@ -214,7 +217,7 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "Package 'Microsoft.Web.Infrastructure 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"Microsoft.Web.Infrastructure 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "projectPath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\LOQ\\source\\repos\\Integrador\\CapaPresentacionTienda\\CapaPresentacionTienda.csproj",
