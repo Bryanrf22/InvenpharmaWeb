@@ -30,8 +30,4 @@
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Tienda\" />
-  </ItemGroup>
-
 </Project>

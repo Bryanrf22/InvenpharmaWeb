@@ -15,8 +15,10 @@
           "Microsoft.AspNet.Mvc": "5.3.0",
           "Microsoft.AspNet.Mvc.es": "5.3.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0",
+          "SweetAlert.Bootstrap": "1.0.1",
           "bootstrap": "5.3.8",
           "jQuery": "3.7.1",
+          "jQuery.LoadingOverlay": "2.1.5",
           "jQuery.Validation": "1.21.0"
         },
         "runtime": {
@@ -601,6 +603,11 @@
         }
       },
       "jQuery/3.7.1": {},
+      "jQuery.LoadingOverlay/2.1.5": {
+        "dependencies": {
+          "jQuery": "3.7.1"
+        }
+      },
       "jQuery.Validation/1.21.0": {
         "dependencies": {
           "jQuery": "3.7.1"
@@ -1768,6 +1775,11 @@
           }
         }
       },
+      "SweetAlert.Bootstrap/1.0.1": {
+        "dependencies": {
+          "Twitter.Bootstrap": "3.0.1.1"
+        }
+      },
       "System.ClientModel/1.5.1": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
@@ -1952,6 +1964,11 @@
       "System.Text.Json/9.0.5": {},
       "System.Threading.Channels/7.0.0": {},
       "System.Threading.Tasks.Dataflow/8.0.0": {},
+      "Twitter.Bootstrap/3.0.1.1": {
+        "dependencies": {
+          "bootstrap": "5.3.8"
+        }
+      },
       "CapaDatos/1.0.0": {
         "dependencies": {
           "CapaEntidad": "1.0.0",
@@ -2383,6 +2400,13 @@
       "sha512": "sha512-rF8hnQxmBMlIspf8VN72bALtmIpKx6hKRpUdTOkp/8JzfF8KgNqHut5lOy9kFGvFIStumCqJ+PBxpI9gxpRYfQ==",
       "path": "jquery/3.7.1",
       "hashPath": "jquery.3.7.1.nupkg.sha512"
+    },
+    "jQuery.LoadingOverlay/2.1.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/W3aBl7mdr2GfqkMEkCiBxsGlTv64sVVP6x0NQptcUC4jshAt8FNNGanLdNqCz5YtgR4bSzUZc99/yA+zXOFcA==",
+      "path": "jquery.loadingoverlay/2.1.5",
+      "hashPath": "jquery.loadingoverlay.2.1.5.nupkg.sha512"
     },
     "jQuery.Validation/1.21.0": {
       "type": "package",
@@ -2818,6 +2842,13 @@
       "path": "nuget.versioning/6.11.0",
       "hashPath": "nuget.versioning.6.11.0.nupkg.sha512"
     },
+    "SweetAlert.Bootstrap/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GOwRZiUaTDUegSgIwz+0kiW7ChrrXaM7vPCVfkynT4LX8hW1lA8mPfDZr454CnNbd/KXT2oywPio66zRemlaaA==",
+      "path": "sweetalert.bootstrap/1.0.1",
+      "hashPath": "sweetalert.bootstrap.1.0.1.nupkg.sha512"
+    },
     "System.ClientModel/1.5.1": {
       "type": "package",
       "serviceable": true,
@@ -3006,6 +3037,13 @@
       "sha512": "sha512-7V0I8tPa9V7UxMx/+7DIwkhls5ouaEMQx6l/GwGm1Y8kJQ61On9B/PxCXFLbgu5/C47g0BP2CUYs+nMv1+Oaqw==",
       "path": "system.threading.tasks.dataflow/8.0.0",
       "hashPath": "system.threading.tasks.dataflow.8.0.0.nupkg.sha512"
+    },
+    "Twitter.Bootstrap/3.0.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9SzxEOEB/rKKeTO/2Tv9uPRzQg/chRfofY9yZ71Sgpxfubp1IXiQlRRFc7IhH+fxo3S/u0umS4dUSgHeYnFIsw==",
+      "path": "twitter.bootstrap/3.0.1.1",
+      "hashPath": "twitter.bootstrap.3.0.1.1.nupkg.sha512"
     },
     "CapaDatos/1.0.0": {
       "type": "project",

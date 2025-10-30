@@ -2,6 +2,7 @@
 using CapaNegocio;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CapaPresentacionTienda.Controllers
@@ -110,7 +111,7 @@ namespace CapaPresentacionTienda.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string correo, string clave)
+        public async Task<IActionResult> Index(string correo, string clave)
         {
             // validar parámetros básicos
             if (string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(clave))
@@ -142,7 +143,21 @@ namespace CapaPresentacionTienda.Controllers
                 return RedirectToAction("CambiarClave", "Acceso");
             }
 
-            // Guardar información mínima en sesión
+            // Crear claims y autenticación por cookie (igual que Admin pero con rol de cliente)
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, objeto.Correo ?? string.Empty),
+                new Claim(ClaimTypes.Email, objeto.Correo ?? string.Empty),
+                new Claim("UsuarioID", objeto.UsuarioID.ToString()),
+                new Claim(ClaimTypes.Role, "Cliente")
+            };
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+
+            // Guardar información mínima en sesión (opcional: se mantiene la cookie/claims)
             HttpContext.Session.SetInt32("UsuarioID", objeto.UsuarioID);
             HttpContext.Session.SetString("Correo", objeto.Correo ?? string.Empty);
             HttpContext.Session.SetString("Administrador", objeto.administrador.ToString());
@@ -183,8 +198,24 @@ namespace CapaPresentacionTienda.Controllers
 
         public async Task<IActionResult> CerrarSesion()
         {
-            // Cerrar sesión (remover cookie)
+            try
+            {
+                HttpContext.Session.Clear();
+            }
+            catch
+            {
+                // Ignorar si no hay sesión o falla al limpiar
+            }
+
+            // Cerrar sesión (remover cookie de autenticación)
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Borrar explícitamente cookies comunes de autenticación por si quedaron
+            // Nombre por defecto de la cookie de cookie-auth: .AspNetCore.Cookies
+            Response.Cookies.Delete(".AspNetCore.Cookies");
+            // También intentar borrar otros nombres comunes (por seguridad)
+            Response.Cookies.Delete(".AspNetCore.Identity.Application");
+
             return RedirectToAction("Index", "Acceso");
         }
 
